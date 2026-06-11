@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parisa Ghasemi — Full-Stack Developer & AI-First Builder</title>
+<meta name="description" content="Parisa Ghasemi — Full-Stack Developer with 5+ years of experience creating scalable applications, modern user experiences, and AI-powered solutions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/sections.css" />
+<style> section[id] { scroll-margin-top: 96px; } </style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#FAFAFF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="thg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7C6CF0"></stop>
+        <stop offset="1" stop-color="#6E8BFF"></stop>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="800" fill="#FAFAFF"></rect>
+    <circle cx="320" cy="220" r="180" fill="#EDE7FF" opacity="0.7"></circle>
+    <circle cx="900" cy="600" r="200" fill="#E4ECFF" opacity="0.7"></circle>
+    <path d="M600 250 C615 365 715 465 830 480 C715 495 615 595 600 710 C585 595 485 495 370 480 C485 465 585 365 600 250 Z" fill="url(#thg)" transform="translate(0,-80)"></path>
+    <circle cx="790" cy="240" r="22" fill="#F0A6D0"></circle>
+    <circle cx="420" cy="580" r="14" fill="#6E8BFF"></circle>
+  </svg>
+</template>
+
+<!-- ambient -->
+<div class="ambient" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="fx" aria-hidden="true">
+  <svg class="curve" viewBox="0 0 1440 900" preserveAspectRatio="none">
+    <defs><linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C6CF0"/><stop offset="1" stop-color="#F0A6D0"/></linearGradient></defs>
+    <path d="M-50 220 C 300 120, 600 320, 980 200 S 1500 120, 1500 200"></path>
+    <path d="M-50 640 C 360 560, 720 760, 1100 620 S 1520 560, 1520 640"></path>
+  </svg>
+  <span class="ring k1"></span>
+  <span class="ring k2"></span>
+  <span class="ring k3"></span>
+  <span class="ring k4"></span>
+</div>
+
+<!-- NAV -->
+<nav class="nav glass">
+  <a href="#top" class="brand">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="bm" x1="5" y1="5" x2="31" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#7C6CF0"/><stop offset="1" stop-color="#6E8BFF"/></linearGradient></defs>
+        <path d="M18 3.5C18.9 11 25 17.1 32.5 18C25 18.9 18.9 25 18 32.5C17.1 25 11 18.9 3.5 18C11 17.1 17.1 11 18 3.5Z" fill="url(#bm)"/>
+        <circle cx="29.5" cy="7" r="1.8" fill="#F0A6D0"/>
+        <circle cx="7" cy="28.5" r="1.2" fill="#6E8BFF"/>
+      </svg>
+    </span>
+    <span>Parisa Ghasemi<br /><small>Full-Stack · AI-First</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#process">AI Process</a>
+  </div>
+  <a href="#contact" class="nav-cta" data-magnetic="0.2"><span class="btn-in">Let's talk</span></a>
+  <button class="nav-burger nav-cta" aria-label="Contact">Contact</button>
+</nav>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<header class="hero wrap" data-screen-label="Hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-greet reveal">
+        <span class="wave">👋</span> Hello, I'm Parisa
+      </span>
+      <h1 class="reveal">
+        From <em>pixels</em> to <em class="grad-text">production</em>.
+      </h1>
+      <div class="hero-journey reveal">
+        <span>UI Designer</span><i>→</i><span>Front-End</span><i>→</i><span>Full-Stack</span><i>→</i><span class="now">AI-First Builder</span>
+      </div>
+      <p class="hero-desc reveal">
+        I started in pixels and grew into production — designing the experience,
+        then engineering the product behind it. Today I build full-stack and
+        AI-first, with an eye for craft on both sides of the screen.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-primary" data-magnetic="0.3">
+          <span class="btn-in">View My Work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+        <a href="#" class="btn btn-ghost" data-magnetic="0.3" download>
+          <span class="btn-in">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            Download Resume
+          </span>
+        </a>
+      </div>
+      <div class="hero-stats reveal-stagger">
+        <div class="stat-card"><div class="n">5<em>+</em></div><div class="l">Years experience</div></div>
+        <div class="stat-card"><div class="n">56M<em>+</em></div><div class="l">Monthly users impacted</div></div>
+        <div class="stat-card"><div class="n">+24<em>%</em></div><div class="l">Performance improvement</div></div>
+        <div class="stat-card"><div class="n">+30<em>%</em></div><div class="l">Test coverage growth</div></div>
+      </div>
+      <div class="scroll-cue reveal"><span class="line"></span> Scroll to explore</div>
+    </div>
+
+    <!-- artistic floating composition: how I build products -->
+    <div class="hero-art" aria-hidden="true">
+      <span class="art-ring-deco anim-floatC" data-depth="0.3"></span>
+      <span class="art-shape s1 anim-floatA" data-depth="1.1"></span>
+      <span class="art-shape s2 anim-floatB" data-depth="0.9"></span>
+
+      <svg class="art-flow" viewBox="0 0 560 560" preserveAspectRatio="none">
+        <defs><linearGradient id="flowGrad" x1="0" y1="0" x2="560" y2="560" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#7C6CF0"/><stop offset="1" stop-color="#6E8BFF"/></linearGradient></defs>
+        <path d="M88 100 C 90 200 150 200 150 285 M150 290 C 200 410 270 455 330 495 M340 495 C 425 465 452 420 452 360 M452 350 C 470 220 430 150 430 90"></path>
+      </svg>
+
+      <!-- Design wireframe -->
+      <div class="float art-wire card-glass anim-floatB" data-depth="0.85" style="transform: translate(var(--px,0), var(--py,0));">
+        <div class="float-tag"><span class="d"></span>Design</div>
+        <div class="wf">
+          <div class="b t"></div>
+          <div class="r"><span class="sq"></span><div class="cl"><span class="b"></span><span class="b" style="width:70%"></span></div></div>
+          <div class="b" style="width:90%"></div>
+          <div class="b" style="width:60%"></div>
+        </div>
+      </div>
+
+      <!-- Shipped product (browser window) -->
+      <div class="float art-browser card-glass anim-floatA" data-depth="0.55" style="transform: translate(var(--px,0), var(--py,0));">
+        <div class="bb"><i></i><i></i><i></i><span class="u">parisa.studio</span></div>
+        <div class="bw">
+          <div class="ph"><span></span></div>
+          <div class="pr"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+
+      <!-- React component -->
+      <div class="float art-react card-glass anim-floatC" data-depth="1.15" style="transform: translate(var(--px,0), var(--py,0));">
+        <div class="top">
+          <span class="atom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.3"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(120 12 12)"/></svg></span>
+          <span class="nm">&lt;Hero /&gt;</span>
+        </div>
+<pre><span class="k">export</span> <span class="k">const</span> <span class="f">Hero</span> = () =&gt; (
+  &lt;<span class="tg">Section</span> <span class="f">glow</span>&gt;
+    &lt;<span class="tg">Headline</span> /&gt;
+  &lt;/<span class="tg">Section</span>&gt;
+);</pre>
+      </div>
+
+      <!-- API connection flow -->
+      <div class="float art-api card-glass anim-floatA" data-depth="0.95" style="transform: translate(var(--px,0), var(--py,0));">
+        <div class="float-tag"><span class="d"></span>API Flow</div>
+        <div class="arow"><span class="m get">GET</span><span class="ep">/products</span></div>
+        <div class="lk"></div>
+        <div class="arow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="3"/></svg></span><span class="lbl">Server</span></div>
+        <div class="lk"></div>
+        <div class="arow"><span class="m db">DB</span><span class="ep">Postgres</span></div>
+      </div>
+
+      <!-- AI node -->
+      <div class="float art-ai anim-floatC" data-depth="1.4" style="transform: translate(var(--px,0), var(--py,0));">
+        <span class="ring" style="animation: spin 14s linear infinite;"></span>
+        <span class="ring r2" style="animation: spinr 20s linear infinite;"></span>
+        <div class="ai-core"><div class="sym">✦</div><div class="lbl">AI</div></div>
+      </div>
+
+      <!-- subtle code snippet -->
+      <div class="float art-snippet card-glass anim-floatB" data-depth="0.7" style="transform: translate(var(--px,0), var(--py,0));">
+<pre><span class="c">// ship it ✨</span>
+<span class="k">await</span> <span class="f">deploy</span>(<span class="s">'edge'</span>);</pre>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-pad wrap" data-screen-label="About">
+  <div class="about-grid">
+    <div class="about-intro reveal">
+      <span class="eyebrow">About</span>
+      <h2 class="section-title">A designer who learned to <em>engineer</em>.</h2>
+      <p>I started in pixels and ended up in production. Over the past five years I've moved from
+      crafting interfaces to shipping full-stack systems — and now I build at the intersection of
+      <strong>design, code, and AI</strong>.</p>
+      <p>My work lives where beautiful experiences meet scalable architecture: thoughtful, fast,
+      and made to grow.</p>
+      <div class="about-sig">— Parisa</div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="spine"><span class="fill"></span></div>
+      <div class="tl-item">
+        <span class="node"></span>
+        <div class="yr">The beginning</div>
+        <h3>UI Designer</h3>
+        <p>Fell in love with the craft of interfaces — typography, rhythm, and the small details that make products feel alive.</p>
+      </div>
+      <div class="tl-item">
+        <span class="node"></span>
+        <div class="yr">Going deeper</div>
+        <h3>Front-End Engineer</h3>
+        <p>Turned designs into living code with React &amp; TypeScript. Learned that great UX is equal parts art and engineering.</p>
+      </div>
+      <div class="tl-item">
+        <span class="node"></span>
+        <div class="yr">Full ownership</div>
+        <h3>Full-Stack Developer</h3>
+        <p>Owned products end-to-end — APIs, databases, performance. Building systems that scale to millions of users.</p>
+      </div>
+      <div class="tl-item">
+        <span class="node"></span>
+        <div class="yr">Today</div>
+        <h3>AI-First Builder</h3>
+        <p>Pairing with AI to design and ship faster than ever — without compromising on quality or craft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section-pad wrap" data-screen-label="Skills">
+  <div class="section-head reveal">
+    <span class="eyebrow">Capabilities</span>
+    <h2 class="section-title">An <em>ecosystem</em> of tools<br />I build with daily.</h2>
+  </div>
+
+  <div class="skills-stage reveal">
+    <svg class="skills-svg" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7C6CF0"/><stop offset="1" stop-color="#6E8BFF"/>
+        </linearGradient>
+      </defs>
+      <path d=""></path>
+    </svg>
+
+    <div class="eco">
+      <div class="eco-col">
+        <div class="eco-head">
+          <span class="dot fe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+          <h4>Frontend <span>Interfaces & experience</span></h4>
+        </div>
+        <div class="skill-card"><span class="badge">R</span><div><div class="nm">React</div><div class="lvl">Expert · daily</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">N</span><div><div class="nm">Next.js</div><div class="lvl">Expert · daily</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Ts</span><div><div class="nm">TypeScript</div><div class="lvl">Expert · daily</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">V</span><div><div class="nm">Vue.js</div><div class="lvl">Advanced</div></div><span class="pulse"></span></div>
+      </div>
+
+      <div class="eco-col mid">
+        <div class="eco-head">
+          <span class="dot be"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <h4>Backend <span>Systems & data</span></h4>
+        </div>
+        <div class="skill-card"><span class="badge">No</span><div><div class="nm">Node.js</div><div class="lvl">Expert · daily</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Pg</span><div><div class="nm">PostgreSQL</div><div class="lvl">Advanced</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Re</span><div><div class="nm">REST APIs</div><div class="lvl">Expert</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Gq</span><div><div class="nm">GraphQL</div><div class="lvl">Advanced</div></div><span class="pulse"></span></div>
+      </div>
+
+      <div class="eco-col">
+        <div class="eco-head">
+          <span class="dot ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+          <h4>AI Tools <span>Pairing & velocity</span></h4>
+        </div>
+        <div class="skill-card"><span class="badge">Cc</span><div><div class="nm">Claude Code</div><div class="lvl">Daily driver</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Cu</span><div><div class="nm">Cursor AI</div><div class="lvl">Daily driver</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Gp</span><div><div class="nm">ChatGPT</div><div class="lvl">Advanced</div></div><span class="pulse"></span></div>
+        <div class="skill-card"><span class="badge">Co</span><div><div class="nm">GitHub Copilot</div><div class="lvl">Advanced</div></div><span class="pulse"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="work" class="section-pad wrap" data-screen-label="Projects">
+  <div class="section-head reveal">
+    <span class="eyebrow">Selected Work</span>
+    <h2 class="section-title">Products built with<br /><em>care</em> &amp; intention.</h2>
+  </div>
+
+  <div class="projects">
+    <!-- Project 1 -->
+    <article class="project reveal">
+      <div class="proj-visual">
+        <span class="proj-glow"></span>
+        <div class="proj-frame">
+          <div class="topbar"><i></i><i></i><i></i><span class="url">sovabudget.app</span></div>
+          <div class="proj-screen" style="padding:16px">
+            <div class="mock-sova">
+              <div class="hd">
+                <span class="lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="4"></rect><path d="M9 4v3h6V4"></path></svg></span>
+                <span class="ti"><b>Sova Budget <i>EUR</i></b><small>Plan calmly. Spend confidently.</small></span>
+                <span class="mnav"><span class="on">Home</span><span>Budget</span><span>Bills</span><span>Review</span><span>Expenses</span></span>
+                <span class="mo">May 2026</span>
+              </div>
+              <div class="bd">
+                <div class="colL">
+                  <div class="card cycle">
+                    <div class="eb">Left in this cycle <span class="dt">Thu, Jun 11 · 4 days remaining</span></div>
+                    <div class="amt">€127<small>.10</small></div>
+                    <div class="cap">Safe to spend for everyday expenses until your next income date</div>
+                    <span class="chip">⌛ Tight this cycle</span>
+                    <div class="strow">
+                      <span class="st"><span class="k">After bills</span><span class="v">€4,200.00</span></span>
+                      <span class="st"><span class="k">Goals</span><span class="v">€1,363.64</span></span>
+                      <span class="st"><span class="k">Daily pace</span><span class="v">€31.77 / day</span></span>
+                      <span class="st"><span class="k">Days remaining</span><span class="v">4 days</span></span>
+                    </div>
+                  </div>
+                  <div class="card week">
+                    <div class="wt">
+                      <span><h5>Your week so far</h5><div class="sub">0 quiet days, 1 heavier — gentle pace.</div></span>
+                      <span class="sp"><span class="k">SPENT</span><br /><span class="v">€819.24</span></span>
+                    </div>
+                    <div class="wbars"><span style="height:26%"></span><span style="height:22%"></span><span style="height:24%"></span><span style="height:22%"></span><span style="height:26%"></span><span style="height:20%"></span><span class="hi" style="height:100%"></span></div>
+                  </div>
+                </div>
+                <div class="colR">
+                  <div class="card next">
+                    <h6>NEXT STEP</h6>
+                    <h5>You may need support before your income date</h5>
+                    <div class="sub">Based on your current pace and upcoming bills, you may run short.</div>
+                    <div class="act">
+                      <span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9a7 7 0 10-14 0c0 4 3 5 3 8h8c0-3 3-4 3-8z" transform="rotate(90 12 12)"></path></svg></span>
+                      <span class="tx"><span class="t">Move money from savings</span><span class="d">Use what you have set aside — only if it feels right.</span></span>
+                      <span class="ar">›</span>
+                    </div>
+                    <div class="act">
+                      <span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h13l-2.5 5L18 14H5"></path></svg></span>
+                      <span class="tx"><span class="t">Pause a goal temporarily</span><span class="d">Free up room this month without giving up the goal.</span></span>
+                      <span class="ar">›</span>
+                    </div>
+                    <div class="act">
+                      <span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l7 7 4-4 5 5"></path><path d="M15 15h5v-5"></path></svg></span>
+                      <span class="tx"><span class="t">Reduce daily pace <em>SUGGESTED</em></span><span class="d">Aim closer to €31.77 per day until your income date.</span></span>
+                      <span class="ar">›</span>
+                    </div>
+                  </div>
+                  <div class="card bills">
+                    <div class="bt"><h5>Upcoming bills</h5><span class="al">All bills →</span></div>
+                    <div class="sub">Nothing due before your next income date.</div>
+                    <div class="tip">💡 Tip: Pay early and keep your future self relaxed.<span class="pb">See all bills</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <span class="proj-num">Project 01</span>
+        <span class="ptag">AI · Fintech</span>
+        <h3>AI Budget Tracker</h3>
+        <p>A financial dashboard that turns raw transactions into clear, AI-driven insights — helping users understand and shape their spending in real time.</p>
+        <ul class="proj-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Financial dashboard</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Smart analytics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Secure authentication</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Responsive UI</li>
+        </ul>
+        <div class="proj-badges"><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>React</span><span>Chart.js</span></div>
+        <a href="#" class="proj-link">View case study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project flip reveal">
+      <div class="proj-visual">
+        <span class="proj-glow" style="background:linear-gradient(125deg,#A8C0FF,#B7AAF8);opacity:.45"></span>
+        <div class="proj-frame">
+          <div class="topbar"><i></i><i></i><i></i><span class="url">nexpath.fi</span></div>
+          <div class="proj-screen" style="padding:16px">
+            <div class="mock-nex">
+              <div class="nhd">
+                <span class="lg"><span class="ic"></span><b>Nex</b><span>Path</span></span>
+                <span class="lnk"><span>Solutions</span><span>Platform</span><span>Insights</span><span>Pricing</span><span>Company</span></span>
+                <span class="pp">Partner Portal</span>
+                <span class="tf">Try Free</span>
+              </div>
+              <div class="nbd">
+                <svg class="road" viewBox="0 0 520 310" preserveAspectRatio="none"><path d="M250 310 C 330 240 430 230 520 130" fill="none" stroke="#9DBCF0" stroke-width="22" stroke-linecap="round" opacity="0.25"></path><path d="M250 310 C 330 240 430 230 520 130" fill="none" stroke="#7FA8EC" stroke-width="2" stroke-dasharray="6 7" opacity="0.5"></path></svg>
+                <span class="acc">Already have an access code?</span>
+                <div class="nl">
+                  <span class="pill"><i>✦</i> See your clients clearly. Guide them confidently.</span>
+                  <h3>The <em>Operating System</em> for Career Guidance</h3>
+                  <p>Deploy validated multilingual psychometrics, manage student caseloads, and co-design Individual Career Plans (ICP) instantly. Built for school deans and professional career agencies.</p>
+                  <span class="hr"></span>
+                  <div class="cta"><span class="b1">Book a Demo →</span><span class="b2">Browse 85k+ Occupations</span></div>
+                </div>
+                <div class="nr">
+                  <div class="rt">
+                    <span class="fl"><span class="fi"></span><small>SUOMALAISTA PALVELUA<br />FINNISH SERVICE</small></span>
+                    <span class="le">Live Engine</span>
+                  </div>
+                  <div class="map">
+                    <svg class="ln" viewBox="0 0 100 60" preserveAspectRatio="none"><line x1="12" y1="22" x2="50" y2="31"></line><line x1="12" y1="36" x2="50" y2="31"></line><line x1="12" y1="50" x2="50" y2="31"></line><line x1="88" y1="22" x2="50" y2="31"></line><line x1="88" y1="36" x2="50" y2="31"></line><line x1="88" y1="50" x2="50" y2="31"></line></svg>
+                    <div class="cols">
+                      <div class="mc l"><span class="mk">ESCO</span><span class="nd"></span><span class="nd"></span><span class="nd"></span></div>
+                      <div class="mc r"><span class="mk">O*NET</span><span class="nd"></span><span class="nd"></span><span class="nd"></span></div>
+                    </div>
+                    <div class="cen"><div class="t">NexPath™</div><div class="s">100% Mapped</div></div>
+                  </div>
+                  <div class="chips">
+                    <span class="b"><i>⊕</i> 28 languages</span>
+                    <span class="b"><i>≡</i> ESCO + O*NET</span>
+                    <span><i>⛨</i> EU data hosting / GDPR</span>
+                    <span><i>☺</i> Used in schools &amp; counseling</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <span class="proj-num">Project 02</span>
+        <span class="ptag">SaaS Platform · EdTech · Career Guidance</span>
+        <h3>NexPath Career Guidance Platform</h3>
+        <p>NexPath is a modern career guidance platform that helps schools, career agencies, and education providers manage assessments, generate personalized career plans, and guide students through their professional journey.</p>
+        <ul class="proj-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Assessment platform</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Career planning workflows</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Multilingual support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Scalable SaaS architecture</li>
+        </ul>
+        <div class="proj-badges"><span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>REST APIs</span></div>
+        <a href="#" class="proj-link">View case study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section-pad wrap" data-screen-label="Experience">
+  <div class="section-head reveal">
+    <span class="eyebrow">Experience</span>
+    <h2 class="section-title">Where I've made<br />an <em>impact</em>.</h2>
+  </div>
+
+  <div class="xp-timeline">
+    <span class="spine"></span>
+
+    <div class="xp-item reveal">
+      <span class="node"></span>
+      <div class="xp-card glass">
+        <div class="xp-top">
+          <div>
+            <div class="role">Full-Stack Developer</div>
+            <div class="co">SabaIdea — Aparat & Filimo</div>
+          </div>
+          <span class="when">Product Scale</span>
+        </div>
+        <p>Built and optimized features across two of Iran's largest media platforms, serving tens of millions of users with a focus on performance, reliability, and quality.</p>
+        <div class="xp-metrics">
+          <div class="xp-metric"><div class="n">56M+</div><div class="l">Users on Aparat</div></div>
+          <div class="xp-metric"><div class="n">3.5M+</div><div class="l">Users on Filimo</div></div>
+          <div class="xp-metric"><div class="n">+24%</div><div class="l">Performance improvement</div></div>
+          <div class="xp-metric"><div class="n">+30%</div><div class="l">Test coverage increase</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal">
+      <span class="node"></span>
+      <div class="xp-card glass">
+        <div class="xp-top">
+          <div>
+            <div class="role">Freelance Full-Stack Developer</div>
+            <div class="co">Independent · Remote</div>
+          </div>
+          <span class="when">AI-Assisted</span>
+        </div>
+        <p>Partnering with founders and teams to ship full-stack applications quickly — combining scalable architecture with an AI-assisted workflow that compresses delivery time without compromising craft.</p>
+        <div class="xp-metrics" style="grid-template-columns:repeat(3,1fr)">
+          <div class="xp-metric"><div class="n">Full-stack</div><div class="l">End-to-end applications</div></div>
+          <div class="xp-metric"><div class="n">AI-first</div><div class="l">Assisted development</div></div>
+          <div class="xp-metric"><div class="n">Scalable</div><div class="l">Architecture by design</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI PROCESS ============ -->
+<section id="process" class="section-pad wrap ai-section" data-screen-label="AI Process">
+  <div class="section-head reveal">
+    <span class="eyebrow">Ways of working</span>
+    <h2 class="section-title">How I work <em>with AI</em>.</h2>
+    <p class="section-lead">AI doesn't replace the craft — it amplifies it. Here's how a product moves from a spark of an idea to a live experience.</p>
+  </div>
+
+  <div class="ai-flow reveal-stagger">
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-4 10.5c.6.6 1 1.3 1 2.5h6c0-1.2.4-1.9 1-2.5A6 6 0 0012 3z"/></svg></div>
+      <div class="st-n">01</div><h4>Idea</h4><p>Frame the problem and the people it's for.</p>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+      <div class="st-n">02</div><h4>Design</h4><p>Shape the experience — flows, type, motion.</p>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.5"/><path d="M5.6 5.6l2 2M16.4 16.4l2 2"/></svg></div>
+      <div class="st-n">03</div><h4>AI Collaboration</h4><p>Pair with AI to explore and accelerate.</p>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+      <div class="st-n">04</div><h4>Development</h4><p>Build it for real — typed, tested, scalable.</p>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <div class="st-n">05</div><h4>Testing</h4><p>Verify, refine, and harden every edge.</p>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="ai-step">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5L3 21l4.5-1.5M14 4s4 0 6 2-2 6-2 6m-2-8C9 5 6 9 6 9l3 3 6 6 3-3s4-3 2-6c0 0-2-2-6-2z"/></svg></div>
+      <div class="st-n">06</div><h4>Launch</h4><p>Ship to the world — then iterate.</p>
+      <span class="arrow"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section-pad wrap" data-screen-label="Contact">
+  <div class="contact-card reveal">
+    <span class="cbg"></span>
+    <span class="cblob c1"></span>
+    <span class="cblob c2"></span>
+    <span class="eyebrow">Let's create</span>
+    <h2>Have an idea worth <em>building</em>?</h2>
+    <p>I'm open to full-time roles, freelance projects, and meaningful collaborations. Let's make something beautiful together.</p>
+    <div class="contact-actions">
+      <a href="mailto:hello@parisaghasemi.dev" class="btn btn-primary" data-magnetic="0.3">
+        <span class="btn-in">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          Say hello
+        </span>
+      </a>
+      <a href="#" class="btn btn-ghost" data-magnetic="0.3" download>
+        <span class="btn-in">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          Download Resume
+        </span>
+      </a>
+    </div>
+    <div class="contact-socials">
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="csocial" data-magnetic="0.25"><span class="btn-in"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6a2.5 2.5 0 002.48 2.5A2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21h-4z"/></svg>LinkedIn</span></a>
+      <a href="https://github.com" target="_blank" rel="noopener" class="csocial" data-magnetic="0.25"><span class="btn-in"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>GitHub</span></a>
+      <a href="mailto:hello@parisaghasemi.dev" class="csocial" data-magnetic="0.25"><span class="btn-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>Email</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer wrap">
+  <div class="footer-in">
+    <a href="#top" class="brand"><span class="mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bm2" x1="5" y1="5" x2="31" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#7C6CF0"/><stop offset="1" stop-color="#6E8BFF"/></linearGradient></defs><path d="M18 3.5C18.9 11 25 17.1 32.5 18C25 18.9 18.9 25 18 32.5C17.1 25 11 18.9 3.5 18C11 17.1 17.1 11 18 3.5Z" fill="url(#bm2)"/><circle cx="29.5" cy="7" r="1.8" fill="#F0A6D0"/><circle cx="7" cy="28.5" r="1.2" fill="#6E8BFF"/></svg></span> Parisa Ghasemi</a>
+    <span class="muted">Designed &amp; built with code, care &amp; AI — © <span id="year">2026</span></span>
+    <a href="#top" class="up">Back to top
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
