@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, type CSSProperties } from "react";
+import { type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -60,19 +61,20 @@ function DownloadIcon() {
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
-
-  // TEMP: diagnostic — confirms in the browser console whether the OS
-  // "reduce motion" setting is disabling the hero animation. Remove later.
-  useEffect(() => {
-    console.log("[Hero] prefers-reduced-motion:", reduceMotion ? "REDUCE (animations OFF)" : "no-preference (animations ON)");
-  }, [reduceMotion]);
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const floatY = isMobile ? 5 : 10;
+  const driftScale = isMobile ? 0.55 : 1;
+  const particles = isMobile
+    ? HERO_PARTICLES.filter((_, i) => i % 2 === 0)
+    : HERO_PARTICLES;
 
   return (
     <header className="hero wrap">
       <div className="hero-particles" aria-hidden="true">
-        {HERO_PARTICLES.map((pt, i) => {
-          const mx = Math.max(-6, Math.min(6, pt.mx));
-          const my = Math.max(-12, Math.min(12, pt.my));
+        {particles.map((pt, i) => {
+          const mx = Math.max(-6, Math.min(6, pt.mx * driftScale));
+          const my = Math.max(-12, Math.min(12, pt.my * driftScale));
+          const size = isMobile ? Math.max(2, pt.size - 1) : pt.size;
           return (
           <motion.span
             key={i}
@@ -81,10 +83,10 @@ export function Hero() {
               {
                 top: pt.top,
                 left: pt.left,
-                width: `${pt.size}px`,
-                height: `${pt.size}px`,
+                width: `${size}px`,
+                height: `${size}px`,
                 "--particle-color": pt.color,
-                "--p-opacity": String(pt.opacity),
+                "--p-opacity": String(isMobile ? pt.opacity * 0.85 : pt.opacity),
                 filter: pt.blur ? `blur(${pt.blur}px)` : undefined,
               } as CSSProperties
             }
@@ -94,8 +96,8 @@ export function Hero() {
                 : {
                     x: [0, mx, -mx * 0.7, 0],
                     y: [0, my, -my * 0.6, 0],
-                    opacity: [0.5, 0.85, 0.5],
-                    scale: [1, 1.08, 1],
+                    opacity: isMobile ? [0.45, 0.7, 0.45] : [0.5, 0.85, 0.5],
+                    scale: isMobile ? [1, 1.04, 1] : [1, 1.08, 1],
                   }
             }
             transition={
@@ -164,17 +166,17 @@ export function Hero() {
         <div className="hero-art" aria-hidden="true">
           <motion.span
             className="art-ring-deco"
-            animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, isMobile ? -2 : -4, 0] }}
             transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.span
             className="art-shape s1"
-            animate={reduceMotion ? undefined : { y: [0, -3, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, isMobile ? -2 : -3, 0] }}
             transition={reduceMotion ? undefined : { duration: 11, delay: 0.8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.span
             className="art-shape s2"
-            animate={reduceMotion ? undefined : { y: [0, 4, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, isMobile ? 2 : 4, 0] }}
             transition={reduceMotion ? undefined : { duration: 13, delay: 1.6, repeat: Infinity, ease: "easeInOut" }}
           />
 
@@ -190,7 +192,7 @@ export function Hero() {
 
           <motion.div
             className="float art-wire card-glass"
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
             transition={reduceMotion ? undefined : { duration: 9, delay: 0, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="float-tag"><span className="d" />Design</div>
@@ -210,7 +212,7 @@ export function Hero() {
 
           <motion.div
             className="float art-browser card-glass"
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
             transition={reduceMotion ? undefined : { duration: 10, delay: 1.6, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="bb">
@@ -225,7 +227,7 @@ export function Hero() {
 
           <motion.div
             className="float art-react card-glass"
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
             transition={reduceMotion ? undefined : { duration: 8, delay: 0.7, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="top">
@@ -250,7 +252,7 @@ export function Hero() {
 
           <motion.div
             className="float art-api card-glass"
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
             transition={reduceMotion ? undefined : { duration: 9.5, delay: 2.4, repeat: Infinity, ease: "easeInOut" }}
           >
             <div className="float-tag"><span className="d" />API Flow</div>
@@ -271,7 +273,7 @@ export function Hero() {
 
           <motion.div
             className="float art-ai"
-            animate={reduceMotion ? undefined : { y: [0, -8, 0], scale: [1, 1.06, 1], opacity: [0.9, 1, 0.9] }}
+            animate={reduceMotion ? undefined : { y: [0, isMobile ? -4 : -8, 0], scale: isMobile ? [1, 1.03, 1] : [1, 1.06, 1], opacity: [0.9, 1, 0.9] }}
             transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
             <span className="decorative-ring" style={{ animation: "spin 14s linear infinite" }} />
@@ -284,7 +286,7 @@ export function Hero() {
 
           <motion.div
             className="float art-snippet card-glass"
-            animate={reduceMotion ? undefined : { y: [0, -10, 0] }}
+            animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
             transition={reduceMotion ? undefined : { duration: 8.5, delay: 1.1, repeat: Infinity, ease: "easeInOut" }}
           >
             <pre>

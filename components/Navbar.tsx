@@ -83,20 +83,16 @@ export function Navbar() {
 
           <button
             type="button"
-            className="nav-burger"
+            className={`nav-burger${menuOpen ? " is-open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <path d="M6 6l12 12M18 6L6 18" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <path d="M4 7h16M4 12h16M4 17h16" />
-              </svg>
-            )}
+            <span className="nav-burger-lines" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
           </button>
         </div>
       </nav>

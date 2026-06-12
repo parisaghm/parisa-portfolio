@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type RevealProps = {
   children: ReactNode;
@@ -17,7 +18,9 @@ export function Reveal({
   as = "div",
 }: RevealProps) {
   const reduced = useReducedMotion();
+  const isMobile = useMediaQuery("(max-width: 767px)");
   const Component = motion[as];
+  const offsetY = isMobile ? 20 : 34;
 
   if (reduced) {
     const Tag = as;
@@ -27,7 +30,7 @@ export function Reveal({
   return (
     <Component
       className={className}
-      initial={{ opacity: 0, y: 34 }}
+      initial={{ opacity: 0, y: offsetY }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{
@@ -79,6 +82,8 @@ export function RevealStaggerItem({
   className?: string;
 }) {
   const reduced = useReducedMotion();
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const offsetY = isMobile ? 16 : 28;
 
   if (reduced) {
     return <div className={className}>{children}</div>;
@@ -88,7 +93,7 @@ export function RevealStaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 28 },
+        hidden: { opacity: 0, y: offsetY },
         visible: {
           opacity: 1,
           y: 0,

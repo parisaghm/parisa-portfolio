@@ -52,7 +52,7 @@ export function Experience() {
             <p>
               Partnering with founders and teams to ship full-stack applications quickly — combining scalable architecture with an AI-assisted workflow that compresses delivery time without compromising craft.
             </p>
-            <div className="xp-metrics" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+            <div className="xp-metrics xp-metrics--three">
               <div className="xp-metric"><div className="n">Full-stack</div><div className="l">End-to-end applications</div></div>
               <div className="xp-metric"><div className="n">AI-first</div><div className="l">Assisted development</div></div>
               <div className="xp-metric"><div className="n">Scalable</div><div className="l">Architecture by design</div></div>
