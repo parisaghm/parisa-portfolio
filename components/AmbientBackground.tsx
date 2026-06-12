@@ -13,7 +13,10 @@ export function AmbientBackground() {
       return;
     }
 
-    const n = window.innerWidth < 480 ? 5 : window.innerWidth < 768 ? 8 : 12;
+    const n =
+      window.innerWidth < 480 ? 7 :
+      window.innerWidth < 768 ? 9 :
+      window.innerWidth < 1024 ? 10 : 12;
     const particles: HTMLSpanElement[] = [];
 
     for (let i = 0; i < n; i++) {

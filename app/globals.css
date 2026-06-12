@@ -220,10 +220,6 @@ section[id] {
     width: 32px;
     height: 32px;
   }
-
-  .hero-particles {
-    opacity: 0.65;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

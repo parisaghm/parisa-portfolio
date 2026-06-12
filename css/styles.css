@@ -161,8 +161,14 @@ section { position: relative; }
 .reveal-stagger > * { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .reveal-stagger.in > * { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+  .art-ai .decorative-ring { animation: none !important; }
+  .art-react .atom svg { animation: none !important; }
 }
 
 /* ===================================================================
@@ -297,7 +303,12 @@ section { position: relative; }
   overflow: hidden;
   isolation: isolate;
 }
-.float { position: absolute; will-change: transform; }
+.float {
+  position: absolute;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 .card-glass {
   background: var(--glass); backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
@@ -432,6 +443,8 @@ section { position: relative; }
   opacity: var(--p-opacity, 0.65);
   box-shadow: 0 0 6px color-mix(in srgb, var(--particle-color, #7c6cf0) 40%, transparent);
   will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 /* Ambient background dots drift via CSS keyframes. */
 .fx-particles .particle {

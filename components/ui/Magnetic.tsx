@@ -1,8 +1,8 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
 import type { ReactNode, MouseEvent } from "react";
 import { useRef } from "react";
+import { useAnimationProfile } from "@/hooks/useAnimationProfile";
 
 type MagneticProps = {
   children: ReactNode;
@@ -31,7 +31,7 @@ export function Magnetic({
   "aria-label": ariaLabel,
   title,
 }: MagneticProps) {
-  const reduced = useReducedMotion();
+  const { allowParallax } = useAnimationProfile();
   const outerRef = useRef<HTMLElement>(null);
   const innerRef = useRef<HTMLSpanElement>(null);
 
@@ -42,7 +42,7 @@ export function Magnetic({
   };
 
   const onMove = (e: MouseEvent) => {
-    if (reduced || !window.matchMedia("(pointer: fine)").matches) return;
+    if (!allowParallax) return;
     const btn = outerRef.current;
     const inner = innerRef.current;
     if (!btn || !inner) return;

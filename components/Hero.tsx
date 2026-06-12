@@ -2,7 +2,11 @@
 
 import { type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import {
+  sampleParticles,
+  scaleMotion,
+  useAnimationProfile,
+} from "@/hooks/useAnimationProfile";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -43,6 +47,8 @@ const HERO_PARTICLES: Array<{
   { top: "50%", left: "72%", size: 3, opacity: 0.6, dur: 24, delay: 4.2, mx: 9, my: 7, color: "#6e8bff" },
 ];
 
+const FLOAT_TRANSITION = { ease: "easeInOut" as const };
+
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,56 +67,57 @@ function DownloadIcon() {
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
-  const isMobile = useMediaQuery("(max-width: 767px)");
-  const floatY = isMobile ? 5 : 10;
-  const driftScale = isMobile ? 0.55 : 1;
-  const particles = isMobile
-    ? HERO_PARTICLES.filter((_, i) => i % 2 === 0)
-    : HERO_PARTICLES;
+  const { intensity, particleRatio } = useAnimationProfile();
+  const particles = sampleParticles(HERO_PARTICLES, particleRatio);
+  const floatY = scaleMotion(10, intensity);
+  const ringSpin = reduceMotion ? undefined : { animation: "spin 14s linear infinite" };
+  const ringSpinReverse = reduceMotion ? undefined : { animation: "spinr 20s linear infinite" };
 
   return (
     <header className="hero wrap">
       <div className="hero-particles" aria-hidden="true">
         {particles.map((pt, i) => {
-          const mx = Math.max(-6, Math.min(6, pt.mx * driftScale));
-          const my = Math.max(-12, Math.min(12, pt.my * driftScale));
-          const size = isMobile ? Math.max(2, pt.size - 1) : pt.size;
+          const mx = Math.max(-6, Math.min(6, scaleMotion(pt.mx, intensity)));
+          const my = Math.max(-12, Math.min(12, scaleMotion(pt.my, intensity)));
+          const peakOpacity = 0.5 + 0.35 * intensity;
+          const peakScale = 1 + 0.08 * intensity;
+
           return (
-          <motion.span
-            key={i}
-            className="particle"
-            style={
-              {
-                top: pt.top,
-                left: pt.left,
-                width: `${size}px`,
-                height: `${size}px`,
-                "--particle-color": pt.color,
-                "--p-opacity": String(isMobile ? pt.opacity * 0.85 : pt.opacity),
-                filter: pt.blur ? `blur(${pt.blur}px)` : undefined,
-              } as CSSProperties
-            }
-            animate={
-              reduceMotion
-                ? undefined
-                : {
-                    x: [0, mx, -mx * 0.7, 0],
-                    y: [0, my, -my * 0.6, 0],
-                    opacity: isMobile ? [0.45, 0.7, 0.45] : [0.5, 0.85, 0.5],
-                    scale: isMobile ? [1, 1.04, 1] : [1, 1.08, 1],
-                  }
-            }
-            transition={
-              reduceMotion
-                ? undefined
-                : {
-                    duration: Math.max(10, Math.min(20, pt.dur)),
-                    delay: pt.delay,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }
-            }
-          />
+            <motion.span
+              key={`${pt.top}-${pt.left}-${i}`}
+              className="particle"
+              style={
+                {
+                  top: pt.top,
+                  left: pt.left,
+                  width: `${pt.size}px`,
+                  height: `${pt.size}px`,
+                  "--particle-color": pt.color,
+                  "--p-opacity": String(pt.opacity),
+                  filter: pt.blur ? `blur(${pt.blur}px)` : undefined,
+                } as CSSProperties
+              }
+              animate={
+                reduceMotion
+                  ? undefined
+                  : {
+                      x: [0, mx, -mx * 0.7, 0],
+                      y: [0, my, -my * 0.6, 0],
+                      opacity: [0.5, peakOpacity, 0.5],
+                      scale: [1, peakScale, 1],
+                    }
+              }
+              transition={
+                reduceMotion
+                  ? undefined
+                  : {
+                      duration: Math.max(10, Math.min(20, pt.dur)),
+                      delay: pt.delay,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+              }
+            />
           );
         })}
       </div>
@@ -166,18 +173,18 @@ export function Hero() {
         <div className="hero-art" aria-hidden="true">
           <motion.span
             className="art-ring-deco"
-            animate={reduceMotion ? undefined : { y: [0, isMobile ? -2 : -4, 0] }}
-            transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            animate={reduceMotion ? undefined : { y: [0, -scaleMotion(4, intensity), 0] }}
+            transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ...FLOAT_TRANSITION }}
           />
           <motion.span
             className="art-shape s1"
-            animate={reduceMotion ? undefined : { y: [0, isMobile ? -2 : -3, 0] }}
-            transition={reduceMotion ? undefined : { duration: 11, delay: 0.8, repeat: Infinity, ease: "easeInOut" }}
+            animate={reduceMotion ? undefined : { y: [0, -scaleMotion(3, intensity), 0] }}
+            transition={reduceMotion ? undefined : { duration: 11, delay: 0.8, repeat: Infinity, ...FLOAT_TRANSITION }}
           />
           <motion.span
             className="art-shape s2"
-            animate={reduceMotion ? undefined : { y: [0, isMobile ? 2 : 4, 0] }}
-            transition={reduceMotion ? undefined : { duration: 13, delay: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            animate={reduceMotion ? undefined : { y: [0, scaleMotion(4, intensity), 0] }}
+            transition={reduceMotion ? undefined : { duration: 13, delay: 1.6, repeat: Infinity, ...FLOAT_TRANSITION }}
           />
 
           <svg className="art-flow" viewBox="0 0 560 560" preserveAspectRatio="none">
@@ -193,7 +200,7 @@ export function Hero() {
           <motion.div
             className="float art-wire card-glass"
             animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
-            transition={reduceMotion ? undefined : { duration: 9, delay: 0, repeat: Infinity, ease: "easeInOut" }}
+            transition={reduceMotion ? undefined : { duration: 9, delay: 0, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
             <div className="float-tag"><span className="d" />Design</div>
             <div className="wf">
@@ -213,7 +220,7 @@ export function Hero() {
           <motion.div
             className="float art-browser card-glass"
             animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
-            transition={reduceMotion ? undefined : { duration: 10, delay: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            transition={reduceMotion ? undefined : { duration: 10, delay: 1.6, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
             <div className="bb">
               <i /><i /><i />
@@ -228,7 +235,7 @@ export function Hero() {
           <motion.div
             className="float art-react card-glass"
             animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
-            transition={reduceMotion ? undefined : { duration: 8, delay: 0.7, repeat: Infinity, ease: "easeInOut" }}
+            transition={reduceMotion ? undefined : { duration: 8, delay: 0.7, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
             <div className="top">
               <span className="atom">
@@ -253,7 +260,7 @@ export function Hero() {
           <motion.div
             className="float art-api card-glass"
             animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
-            transition={reduceMotion ? undefined : { duration: 9.5, delay: 2.4, repeat: Infinity, ease: "easeInOut" }}
+            transition={reduceMotion ? undefined : { duration: 9.5, delay: 2.4, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
             <div className="float-tag"><span className="d" />API Flow</div>
             <div className="arow"><span className="m get">GET</span><span className="ep">/products</span></div>
@@ -273,11 +280,19 @@ export function Hero() {
 
           <motion.div
             className="float art-ai"
-            animate={reduceMotion ? undefined : { y: [0, isMobile ? -4 : -8, 0], scale: isMobile ? [1, 1.03, 1] : [1, 1.06, 1], opacity: [0.9, 1, 0.9] }}
-            transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    y: [0, -scaleMotion(8, intensity), 0],
+                    scale: [1, 1 + 0.06 * intensity, 1],
+                    opacity: [0.9, 1, 0.9],
+                  }
+            }
+            transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
-            <span className="decorative-ring" style={{ animation: "spin 14s linear infinite" }} />
-            <span className="decorative-ring r2" style={{ animation: "spinr 20s linear infinite" }} />
+            <span className="decorative-ring" style={ringSpin} />
+            <span className="decorative-ring r2" style={ringSpinReverse} />
             <div className="ai-core">
               <div className="sym">✦</div>
               <div className="lbl">AI</div>
@@ -287,7 +302,7 @@ export function Hero() {
           <motion.div
             className="float art-snippet card-glass"
             animate={reduceMotion ? undefined : { y: [0, -floatY, 0] }}
-            transition={reduceMotion ? undefined : { duration: 8.5, delay: 1.1, repeat: Infinity, ease: "easeInOut" }}
+            transition={reduceMotion ? undefined : { duration: 8.5, delay: 1.1, repeat: Infinity, ...FLOAT_TRANSITION }}
           >
             <pre>
               <span className="c">{"// ship it ✨"}</span>
