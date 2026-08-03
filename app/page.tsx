@@ -1,30 +1,24 @@
-import { AIProcess } from "@/components/AIProcess";
-import { About } from "@/components/About";
-import { AmbientBackground } from "@/components/AmbientBackground";
-import { Contact } from "@/components/Contact";
-import { Experience } from "@/components/Experience";
+import { ContactSection } from "@/components/ContactSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { WorkSection } from "@/components/WorkSection";
 
 export default function Home() {
   return (
     <>
-      <AmbientBackground />
-      <Navbar />
       <span id="top" />
+      <Header />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <AIProcess />
-        <Contact />
-        <Footer />
+        <HeroSection />
+        <WorkSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Cormorant_Garamond,
-  JetBrains_Mono,
-  Manrope,
-} from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -12,37 +8,22 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: {
-    absolute: "Parisa Ghasemi",
+    absolute: "Parisa Ghasemi — Frontend-Focused Full-Stack Engineer",
   },
   description:
-    "Full-Stack Developer building beautiful digital products with code, design, and AI.",
+    "Frontend-focused full-stack engineer in Helsinki building reliable, accessible web and SaaS products with React, Next.js and TypeScript.",
   openGraph: {
-    title: "Parisa Ghasemi",
+    title: "Parisa Ghasemi — Frontend-Focused Full-Stack Engineer",
     description:
-      "Full-Stack Developer building beautiful digital products with code, design, and AI.",
+      "Frontend-focused full-stack engineer in Helsinki building reliable, accessible web and SaaS products with React, Next.js and TypeScript.",
   },
   twitter: {
     card: "summary",
-    title: "Parisa Ghasemi",
+    title: "Parisa Ghasemi — Frontend-Focused Full-Stack Engineer",
     description:
-      "Full-Stack Developer building beautiful digital products with code, design, and AI.",
+      "Frontend-focused full-stack engineer in Helsinki building reliable, accessible web and SaaS products with React, Next.js and TypeScript.",
   },
 };
 
@@ -52,10 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} ${cormorant.variable} ${jetbrains.variable}`}
-    >
+    <html lang="en" className={manrope.variable}>
       <body>{children}</body>
     </html>
   );
